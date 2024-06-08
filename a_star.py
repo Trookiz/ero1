@@ -2,15 +2,15 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import easy_graph
 
-G_drones = easy_graph.G_drones
+G_drones = easy_graph.G
 pos = easy_graph.pos
 
 # Application algorithm's shortest path
 
 # Algorithm A* between 'Point A' and 'Point C' (using geographical's distance like heuristic)
 # La distance géographique est la distance euclidienne pour ce petit exemple
-shortest_path_astar = nx.astar_path(G_drones, 'Point A', 'Point C', heuristic=lambda u, v: nx.shortest_path_length(G_drones, u, v, weight='weight'))
-shortest_path_length_astar = nx.astar_path_length(G_drones, 'Point A', 'Point C', heuristic=lambda u, v: nx.shortest_path_length(G_drones, u, v, weight='weight'))
+shortest_path_astar = nx.astar_path(G_drones, 'Verdun', 'Anjou', heuristic=lambda u, v: nx.shortest_path_length(G_drones, u, v, weight='weight'))
+shortest_path_length_astar = nx.astar_path_length(G_drones, 'Verdun', 'Anjou', heuristic=lambda u, v: nx.shortest_path_length(G_drones, u, v, weight='weight'))
 
 print(f"Plus court chemin (A*) de 'Point A' à 'Point C': {shortest_path_astar}")
 print(f"Longueur du plus court chemin (A*): {shortest_path_length_astar}")
