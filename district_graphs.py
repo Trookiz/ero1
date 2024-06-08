@@ -45,4 +45,4 @@ def draw_district(G):
 
 graphs = load_districts(districts)
 for G in districts:
-    draw_map(graphs[G])
+    draw_district(graphs[G])
